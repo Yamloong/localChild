@@ -204,6 +204,7 @@ button:disabled {
 	min-width: 140px;
 	padding: 8px 12px;
 	border: 1px solid #E5E6EC;
+	border-radius: 4px;
 }
 .select-wrap select:hover {
 	background-color: #fff;
@@ -221,8 +222,8 @@ button:disabled {
 
 .select-wrap select,
 .select-wrap select::picker(select) {
-	-webkit-appearance: base-select; /* Safari & iOS */
-	-moz-appearance: base-select;    /* Firefox */
+	-webkit-appearance: none; /* Safari & iOS */
+	-moz-appearance: none;    /* Firefox */
 	appearance: base-select;         /* 표준 */
 }
 .select-wrap select::picker(select) {
@@ -749,4 +750,5 @@ table.all-center td {
 }
 	
 }
+
 
