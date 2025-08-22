@@ -221,7 +221,9 @@ button:disabled {
 
 .select-wrap select,
 .select-wrap select::picker(select) {
-	appearance: base-select;
+	-webkit-appearance: base-select; /* Safari & iOS */
+	-moz-appearance: base-select;    /* Firefox */
+	appearance: base-select;         /* 표준 */
 }
 .select-wrap select::picker(select) {
 	transition:
@@ -747,3 +749,4 @@ table.all-center td {
 }
 	
 }
+
