@@ -4,8 +4,8 @@
 /* import를 추가하려면 _mo.css 아래에 추가해주세요. */
 /* 각 css파일에 pc, mobile css 함께 있습니다.(반응형) */
 
-@import	"_reset.css"; /* css reset */
-@import "_config.css"; /* css color set */
+@import	"reset.css"; /* css reset */
+@import "config.css"; /* css color set */
 
 @import "../font/icomoon/style.css";
 
@@ -22,3 +22,4 @@
 @import "mypage.css"; /* 08.마이페이지 */
 
 @import "etc.css"; /* 09.기타 */
+
