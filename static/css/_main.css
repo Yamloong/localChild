@@ -313,16 +313,24 @@
 }
 .main-page header .top {
 	justify-content: center;
+	padding: 16px 0;
 }
-.main-page header .title {
-	display: none;
+.main-page header .top .logo {
+	display: block;
+	width: 128px;
+	height: 33px;
+    padding: 0;
 }
-
-/* 햄버거 메뉴 */
+/* 햄버거 메뉴 버튼 */
 .main-page header .top .btn_menu {
-	position: absolute;
 	top: 16.5px;
 	right: 0;
+	width: 32px;
+	height: 32px;
+}
+
+.main-page header .title {
+	display: none;
 }
 
 .main-page #container .inner {

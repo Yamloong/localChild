@@ -279,6 +279,7 @@ body:not(.main-page) #container {
 #container .inner {
 	flex: 1;
 	margin: 0;
+	padding: 32px 16px;
 }
 #container.map {
 	display: block;
@@ -496,13 +497,10 @@ header .top {
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	padding: 16px 0;
+	padding: 12px 0;
 }
 header .top .logo {
-	display: block;
-	width: 128px;
-	height: 33px;
-    padding: 0;
+	display: none;
 }
 /* 서브페이지 뒤로가기 버튼 */
 header .top .btn_back {
@@ -525,9 +523,12 @@ header .top .title {
 header .top .btn_menu {
 	display: inline-block;
 	position: absolute;
-	width: 32px;
-	height: 32px;
+	top: 12px;
+	right: 0;
+	width: 24px;
+	height: 24px;
 	background: #fff url('../images/icon/ic_menu.svg') no-repeat center center;
+	background-size: 100% auto;
 }
 
 /* GNB */
