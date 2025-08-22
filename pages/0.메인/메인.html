@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>지역아동센터 플랫폼</title>
+
+<!--v JS -->
+<script src="../../static/js/jquery.min.js"></script>
+<link href="../../static/css/jquery-ui.min.css" rel="stylesheet" />
+<script src="../../static/js/jquery-ui.min.js"></script>
+
+<link href="../../static/css/swiper-bundle.css" rel="stylesheet" />
+<script src="../../static/js/swiper-bundle.min.js"></script>
+<!--^ JS -->
+	
+<!--v only main -->
+<script src="../../static/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 메인 하단 배너 롤링
+	const mainVisual = new Swiper('.faq-slide', {
+		// Optional parameters
+		effect: 'slide',
+		speed : 600,
+		spaceBetween: 22, //이미지 사이 여백
+		allowTouchMove: false, //false시에 버튼으로만 슬라이드 조작가능
+		loop: true,
+		autoplay: { // 자동 롤링
+			delay: 2500, // 지연시간
+			disableOnInteraction: false,
+		},
+		// If we need pagination
+		pagination: false,
+		navigation: {
+			nextEl: ".faq-button-next",
+			prevEl: ".faq-button-prev",
+		},
+	});
+});
+</script>
+<!--^ only main -->
+
+<link href="../../static/css/all.css" rel="stylesheet" />
+<script src="../../static/js/util.js"></script>
+</head>
+
+<body class="main-page"><!-- 메인페이지 class : main-page / 서브페이지 class : sub-page -->
+
+	<!-- 접근성 전체 공통 -->
+	<div id="skipnav">
+        <a href="#container">본문 바로가기</a>
+    </div>
+	<!-- 접근성 전체 공통 -->
+
+	<header>
+		<div class="inner">
+
+			<!--v PC 영역 start -->
+			<h1 class="logo">
+				<a href="#" title="메인페이지로 이동">
+					<img src="../../static/images/logo.svg" alt="지역아동센터 플랫폼 로고" />
+				</a>
+			</h1>
+
+			<div id="gnb">
+				<!--v Mobild 영역 : 모바일 메뉴 start -->
+				<div class="my-state-mo">
+					<div class="button-wrap">
+						<!-- 홈 버튼 -->
+						<a href="#" class="btn-home" title="메인페이지로 이동">
+							<img src="../../static/images/icon/ic_home.svg" alt="홈 아이콘">
+						</a>
+		
+						<!-- 닫기 버튼 -->
+						<button type="button" class="btn_close" title="모바일 메뉴 닫기"></button>
+					</div>
+
+					<div class="util-bar">
+						<div class="member">
+							<!--v 로그인 전 -->
+							<a href="#" class="btn-login" title="로그인 페이지로 이동">환영합니다<br>로그인후 이용해주세요.</a>
+							<a href="#" class="btn-join" title="회원가입 페이지로 이동">회원가입</a>
+							<!--^ 로그인 전 -->
+
+							<!--v 로그인 후 -->
+							<!-- <a href="#" class="btn-login" title="마이페이지로 이동">홍길동님<br>반갑습니다.</a>
+							<span class="center">OOO 아동지원센터</span> -->
+							<!--^ 로그인 후 -->
+						</div>
+						
+					</div>
+				</div>
+				<!--v Mobild 영역 : 모바일 메뉴 end -->
+
+				<ul class="menu-list">
+					<li>
+						<a href="#">영양소분석</a>
+						<ul class="gnb-sub-menu">
+							<li>
+								<a href="../1.영양소분석/영양소분석_리포트.html">영양소분석 리포트</a>
+							</li>
+							<li>
+								<a href="../1.영양소분석/식단표관리.html">식단표관리</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">지출증빙</a>
+						<ul class="gnb-sub-menu">
+							<li>
+								<a href="../2.지출증빙/지출증빙서류_관리.html">지출증빙서류관리</a>
+							</li>
+							<li>
+								<a href="../2.지출증빙/지출증빙서류_승인관리.html">지출증빙서류 승인관리</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">모니터링</a>
+						<ul class="gnb-sub-menu">
+							<li>
+								<a href="../3.모니터링/보조금설정관리.html">보조금 설정 관리</a>
+							</li>
+							<li>
+								<a href="../3.모니터링/급식정산표조회.html">급식정산표 조회</a>
+							</li>
+							<li>
+								<a href="../3.모니터링/출석부조회.html">출석부 조회</a>
+							</li>
+							<li>
+								<a href="../3.모니터링/급식부조회.html">급식부 조회</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">정산보고서</a>
+						<ul class="gnb-sub-menu">
+							<li>
+								<a href="../4.정산보고서/정산보고서조회.html">정산보고서 조회</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">직원관리</a>
+						<ul class="gnb-sub-menu">
+							<li>
+								<a href="../5.직원관리/승인요청관리.html">승인요청관리</a>
+							</li>
+							<li>
+								<a href="../5.직원관리/직원정보관리.html">직원정보관리</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">고객센터</a>
+						<ul class="gnb-sub-menu">
+							<li>
+								<a href="../6.고객센터/공지사항.html">공지사항</a>
+							</li>
+							<li>
+								<a href="../6.고객센터/FAQ.html">FAQ</a>
+							</li>
+							<li>
+								<a href="../6.고객센터/일대일문의.html">1:1문의</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<!--v PC 영역 : 로그인 전/후 start -->
+			<div class="member-area">
+				<ul class="list">
+					<!--v 로그인 전 -->
+					<li>
+						<a href="#" class="link">로그인</a>
+					</li>
+					<li>
+						<a href="#" class="link">회원가입</a>
+					</li>
+					<!--^ 로그인 전 -->
+					
+					<!--v 로그인 후 -->
+					<!-- <li>
+						<a href="#" class="link">마이페이지</a>
+					</li>
+					<li>
+						<a href="#" class="link">로그아웃</a>
+					</li> -->
+					<!--^ 로그인 후 -->
+				</ul>
+				<button type="button" class="btn_allmenu" title="전체메뉴 열기"></button>
+			</div>
+			<!--^ PC 영역 : 로그인 전/후 end -->
+
+			<!--v Mobild 영역 start -->
+			<div class="top">
+
+				<!-- 메인페이지 : only main 로고 -->
+				<h1 class="logo">
+					<a href="#">
+						<img src="../../static/images/mo_logo.svg" alt="지역아동센터 플랫폼 로고" />
+					</a>
+				</h1>
+
+				<!-- 서브페이지 : only sub 뒤로가기 버튼 & 타이틀 -->
+				<div class="title">
+					<a href="javascript:window.history.back();" class="btn_back" title="이전페이지"></a>
+					<span>서브페이지 타이틀</span>
+				</div>
+
+				<!-- 메인&서브 : 햄버거 메뉴 -->
+				<button type="button" class="btn_menu" aria-haspopup="true" title="모바일 메뉴열기"></button>
+			</div>
+			<!--v Mobild 영역 end -->
+			
+		</div>
+	</header>
+
+	<div id="container">
+		<div class="inner">
+			<!-- 메인 비주얼 -->
+			<div class="main-visual">
+				<img class="pc" src="../../static/images/main/main_visual.png" alt="건강하고 맛있는 급식 지역아동센터가 함께합니다.">
+				<img class="mo" src="../../static/images/main/main_visual_mo.png" alt="건강하고 맛있는 급식 지역아동센터가 함께합니다.">
+			</div>
+
+			<div class="swipe">
+				<div class="box-wrap">
+					<!-- 영양소분석 서비스 -->
+					<div class="box nutrient">
+						<div class="title">
+							<a href="#" class="link" title="영양소분석 서비스로 이동">
+								<span>영양소분석 서비스</span>
+							</a>
+						</div>
+						<div class="txt">한장의 사진으로 한끼 식사를 완벽하게 분석할 수 있는 인공지능 음식 이미지 분석 서비스를 제공합니다.</div>
+					</div>
+
+					<!-- 영수증 자동인식 서비스 -->
+					<div class="box receipt">
+						<div class="title">
+							<a href="#" class="link" title="영수증 자동인식 서비스로 이동">
+								<span>영수증 자동인식 서비스</span>
+							</a>
+						</div>
+						<div class="txt">수동으로 관리하던 영수증을 이제 디지털화하여 업무 효율성과 데이터 활용도를 획기적으로 높여줍니다.</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="box-wrap">
+				<!-- 공지사항 -->
+				<div class="box notice">
+					<div class="title">
+						<a href="#" class="link" title="공지사항으로 이동">
+							<span>공지사항</span>
+						</a>
+					</div>
+					<ul class="list">
+						<li>
+							<a href="#" title="게시글 상세보기로 이동">
+								<span class="subject">2025년 배달쿠폰 이용량이 급증하여 5월 1일(목)부터 쿠폰 수량이 아래와 같이 조정되오니 배달 이용에</span>
+								<span class="date">2025.00.00</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="게시글 상세보기로 이동">
+								<span class="subject">2025년 배달쿠폰 이용량이 급증하여 5월 1일(목)부터 쿠폰 수량이 아래와 같이 조정되오니 배달 이용에</span>
+								<span class="date">2025.00.00</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="게시글 상세보기로 이동">
+								<span class="subject">2025년 배달쿠폰 이용량이 급증하여 5월 1일(목)부터 쿠폰 수량이 아래와 같이 조정되오니 배달 이용에</span>
+								<span class="date">2025.00.00</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="게시글 상세보기로 이동">
+								<span class="subject">2025년 배달쿠폰 이용량이 급증하여 5월 1일(목)부터 쿠폰 수량이 아래와 같이 조정되오니 배달 이용에</span>
+								<span class="date">2025.00.00</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- 자주하는 질문 -->
+				<div class="box faq">
+					<div class="title">
+						<a href="#" class="link" title="자주하는 질문으로 이동">
+							<span>자주하는 질문</span>
+						</a>
+					</div>
+
+					<div class="question">자주하는 질문이 무엇인가요?</div>
+					<!-- 질문 슬라이드 -->
+					<div class="faq-slide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">본인이 인증을 시도한 연락처와 지자체 시스템 내 등록된 연락처가 상이하면 배달특급을 이용할 수 없습니다. 관할 행정복지센터 아동급식 담당자를 통해 휴대전화 번호를 변경하시기 바랍니다</div>
+							<div class="swiper-slide">두번째</div>
+							<div class="swiper-slide">세번째</div>
+						</div>
+					</div>
+					<div class="swiper-controler">
+						<button class="faq-button-prev" title="이전 질문" role="button"></button>
+						<button class="faq-button-next" title="다음 질문" role="button"></button>
+					</div>
+				</div>
+
+				<!-- 고객센터 -->
+				<div class="box customer">
+					<div class="top">
+						<div class="title">도움이 필요하신가요?<br>상담원 연결로 문제를 바로 해결하세요.</div>
+						<div class="time">(상담시간 : 평일 9시~18시)</div>
+					</div>
+					<ul class="call-center">
+						<li><span class="name">경기도 민원 콜센터</span><br>031-120</li>
+						<li class="dashed"></li>
+						<li><span class="name">지드림카드 콜센터</span><br>1577-8563</li>
+					</ul>
+				</div>
+
+				<!-- 일대일문의 -->
+				<div class="box inquiry">
+					<div class="title">1:1 문의 궁금하신 내용을 남겨주시면<br>빠르게 처리해 드리겠습니다.</div>
+					<ul class="board-center">
+						<li>
+							<a href="#" class="link" class="자주하는 질문으로 이동"><strong>FAQ</strong><br>바로가기</a>
+						</li>
+						<li class="dashed"></li>
+						<li>
+							<a href="#" class="link" class="일대일 문의게시판으로 이동"><strong>1:1 문의</strong><br>바로가기</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div><!-- .inner -->
+	</div><!-- .container -->
+
+	<!-- 모바일에서 footer 안보이게 처리 -->
+	<footer>
+		<div class="inner">
+			<div class="logo">
+				<img src="../../static/images/f_logo.png" alt="경기도 로고">
+			</div>
+			<ul class="terms-list">
+				<li>
+					<button class="btn-txt" aria-haspopup="true" title="이용약관 내용보기" onclick="openPop('terms')">
+						<span>이용약관</span>
+					</button>
+				</li>
+				<li>
+					<button class="btn-txt" aria-haspopup="true" title="개인정보처리방침 내용보기" onclick="openPop('privacy')">
+						<span>개인정보처리방침</span>
+					</button>
+				</li>
+				<li>
+					<button class="btn-txt" aria-haspopup="true" title="개인정보 수집·이용 동의서 내용보기" onclick="openPop('collection')">
+						<span>개인정보 수집·이용 동의서</span>
+					</button>
+				</li>
+				<li>
+					<button class="btn-txt" aria-haspopup="true" title="개인정보 제3자 제공 동의 내용보기" onclick="openPop('provision')">
+						<span>개인정보 제3자 제공 동의</span>
+					</button>
+				</li>
+			</ul>
+			<address>경기도청 16508 경기도 수원시 영통구 도청로 30</address>
+			<div class="copy">COPYRIGHT (C)2022 GYEONGGI PROVINCE. ALL RIGHTS RESERVED.</div>
+		</div>
+		<a href="#TOP" class="btn btn_top" title="맨 위로"></a>
+	</footer>
+
+
+	<!-- 이용약관 팝업 start -->
+	<div id="terms" class="layer-pop">
+		<div class="layer-wrap" style="max-width: 720px;">
+			<div class="layer-header">
+				<h4 class="layer-title">이용약관</h4>
+			</div><!-- .layer-header -->
+	
+			<div class="layer-body" tabindex="0">
+				
+				<div class="etc-wrap">
+					<div class="sub-title">제 1장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+
+					<div class="sub-title">제 2장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+				</div>
+
+			</div><!-- .layer-body -->
+
+			<div class="layer-footer">
+				<div class="button-wrap">
+					<button type="button" class="btn btn-line">
+						<span>이용약관 다운로드</span>
+					</button>
+				</div>
+			</div><!-- .layer-footer -->
+			
+			<!-- 웹접근성을 위해 닫기버튼은 맨 나중에 위치 -->
+			<div class="button-wrap">
+				<button type="button" class="btn btn_close" title="팝업 닫기"></button>
+			</div>
+
+		</div><!-- .layer-contents -->
+	</div>
+	<!-- 이용약관 팝업 end -->
+
+	<!-- 개인정보처리방침 팝업 start -->
+	<div id="privacy" class="layer-pop">
+		<div class="layer-wrap" style="max-width: 720px;">
+			<div class="layer-header">
+				<h4 class="layer-title">개인정보처리방침</h4>
+			</div><!-- .layer-header -->
+	
+			<div class="layer-body" tabindex="0">
+				
+				<div class="etc-wrap">
+					<div class="sub-title">제 1장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+
+					<div class="sub-title">제 2장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+					
+					<div class="sub-title">제 1장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+
+					<div class="sub-title">제 2장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+					
+					<div class="sub-title">제 1장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+				</div>
+
+			</div><!-- .layer-body -->
+
+			<div class="layer-footer">
+				<div class="button-wrap">
+					<button type="button" class="btn btn-line">
+						<span>개인정보처리방침 다운로드</span>
+					</button>
+				</div>
+			</div><!-- .layer-footer -->
+			
+			<!-- 웹접근성을 위해 닫기버튼은 맨 나중에 위치 -->
+			<div class="button-wrap">
+				<button type="button" class="btn btn_close" title="팝업 닫기"></button>
+			</div>
+
+		</div><!-- .layer-contents -->
+	</div>
+	<!-- 개인정보처리방침 팝업 end -->
+
+	<!-- 개인정보 수집·이용 동의서 팝업 start -->
+	<div id="collection" class="layer-pop">
+		<div class="layer-wrap" style="max-width: 720px;">
+			<div class="layer-header">
+				<h4 class="layer-title">개인정보 수집·이용 동의서</h4>
+			</div><!-- .layer-header -->
+	
+			<div class="layer-body" tabindex="0">
+				
+				<div class="etc-wrap">
+					<div class="sub-title">제 1장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+
+					<div class="sub-title">제 2장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+				</div>
+
+			</div><!-- .layer-body -->
+
+			<div class="layer-footer">
+				<div class="button-wrap">
+					<button type="button" class="btn btn-line">
+						<span>개인정보 수집·이용 동의서 다운로드</span>
+					</button>
+				</div>
+			</div><!-- .layer-footer -->
+			
+			<!-- 웹접근성을 위해 닫기버튼은 맨 나중에 위치 -->
+			<div class="button-wrap">
+				<button type="button" class="btn btn_close" title="팝업 닫기"></button>
+			</div>
+
+		</div><!-- .layer-contents -->
+	</div>
+	<!-- 개인정보 수집·이용 동의서 팝업 end -->
+
+	<!-- 개인정보 제3자 제공 동의 팝업 start -->
+	<div id="provision" class="layer-pop">
+		<div class="layer-wrap" style="max-width: 720px;">
+			<div class="layer-header">
+				<h4 class="layer-title">개인정보 제3자 제공 동의</h4>
+			</div><!-- .layer-header -->
+	
+			<div class="layer-body" tabindex="0">
+				
+				<div class="etc-wrap">
+					<div class="sub-title">제 1장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+
+					<div class="sub-title">제 2장 총칙</div>
+					<div class="txt">경기도(이하 "도")에서 운영하는 「경기도 아동급식지원 플랫폼」(이하 "급식플랫폼")이 제공하는 위치기반 서비스를 포함한 모든 서비스(이하 "서비스")를 이용 함에 있어 서비스를 이용하는 조건, 이용자와 "급식플랫폼" 간의 권리·의무 및 책임 사항, 이용 절차, 기타 필요한 사항을 정하는 데 그 목적이 있습니다.</div>
+				</div>
+
+			</div><!-- .layer-body -->
+
+			<div class="layer-footer">
+				<div class="button-wrap">
+					<button type="button" class="btn btn-line">
+						<span>개인정보 제3자 제공 동의 다운로드</span>
+						<i class="ic-download"></i>
+					</button>
+				</div>
+			</div><!-- .layer-footer -->
+			
+			<!-- 웹접근성을 위해 닫기버튼은 맨 나중에 위치 -->
+			<div class="button-wrap">
+				<button type="button" class="btn btn_close" title="팝업 닫기"></button>
+			</div>
+
+		</div><!-- .layer-contents -->
+	</div>
+	<!-- 개인정보 제3자 제공 동의 팝업 end -->
+
+</body>
+</html>
