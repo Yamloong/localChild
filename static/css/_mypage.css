@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/**
+ * "마이페이지" 화면 스타일을 여기에 정의합니다.
+ * 바우처신청 - 온라인신청 화면은 마이페이지 css를 사용합니다.
+ * 이 파일은 all.css에서 import되어 사용됩니다.
+**/
+
+/************************************************
+	8. 마이페이지 - 나의 바우처
+************************************************/
+.mypage-wrap .my-info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0 100px;
+	margin: 40px 0;
+}
+.mypage-wrap .my-info img {
+	width: 260px;
+}
+.mypage-wrap .my-info .card-area {
+	text-align: center;
+}
+.mypage-wrap .my-info .card-area .no-card {
+	padding: 72px 0 56px !important;
+	color: #999;
+	font-size: 16px;
+	line-height: 24px;
+	background: #fafafa url('../images/icon/ic_notice.svg') no-repeat center 35px;
+	border-radius: 2px;
+}
+.mypage-wrap .my-info .card-area .button-wrap {
+	justify-content: center;
+	gap: 0 8px;
+	margin-top: 8px;
+}
+.mypage-wrap .my-info .button-wrap .btn-line-primary {
+	font-size: 14px;
+}
+.mypage-wrap .my-info .details {
+	width: 288px;
+}
+.mypage-wrap .my-info .details ul {
+	margin-bottom: 8px;
+	border-top: 1px solid #000;
+}
+.mypage-wrap .my-info .details li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 0;
+	line-height: 24px;
+	border-bottom: 1px solid #ddd;
+}
+.mypage-wrap .my-info .details li span {
+	color: #666;
+	font-size: 13px;
+}
+.mypage-wrap .my-info .details li span.info {
+	color: #000;
+	font-size: 16px;
+}
+.mypage-wrap .my-info .details .button-wrap {
+	justify-content: flex-end;
+}
+.mypage-wrap .tbl-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+.mypage-wrap .tbl-header .count {
+	font-size: 16px;
+	line-height: 28px;
+}
+.mypage-wrap .usage-list {
+	padding-top: 20px;
+	border-top: 1px solid #000;
+}
+.mypage-wrap .usage-list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0 40px;
+	padding: 20px 28px;
+	border-bottom: 1px solid #ddd;
+}
+.mypage-wrap .usage-list li .time {
+	margin-top: 4px;
+	color: #666;
+	font-size: 14px;
+	line-height: 20px;
+}
+.mypage-wrap .usage-list li span[class^="badge"] {
+	padding: 5px 8px;
+	font-size: 13px;
+	border-radius: 24px;
+}
+.mypage-wrap .usage-list li .subject {
+	flex: 1;
+	font-size: 15px;
+	line-height: 24px;
+}
+.mypage-wrap .usage-list li .subject span {
+	overflow : hidden;    
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.mypage-wrap .usage-list li .price {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 28px;
+	text-align: right;
+	white-space: nowrap;
+}
+.mypage-wrap .usage-list li .price.cancel {
+	color: #bbb;
+}
+.mypage-wrap .usage-list li .price .balance {
+	color: #666;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 24px;
+}
+.mypage-wrap .usage-list li.no-data {
+	justify-content: center;
+	gap: 0;
+	padding: 80px 0 !important;
+	color: #999;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center !important;
+	background: url('../images/icon/ic_notice.svg') no-repeat center 40px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+/************************************************
+	8. 마이페이지 - 나의 바우처
+************************************************/
+.mypage-wrap .my-info {
+	display: block;
+	margin: 20px 0;
+	text-align: center;
+}
+.mypage-wrap .my-info img {
+	width: 260px;
+}
+.mypage-wrap .my-info .details {
+	margin: 20px auto 60px;
+}
+.mypage-wrap .my-info .details li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 0;
+	line-height: 24px;
+	border-bottom: 1px solid #ddd;
+}
+.mypage-wrap .my-info .details li span {
+	color: #666;
+	font-size: 13px;
+}
+.mypage-wrap .my-info .details li span.info {
+	color: #000;
+	font-size: 16px;
+}
+.mypage-wrap .my-info .button-wrap .btn-line-primary {
+	font-size: 13px;
+}
+.mypage-wrap .board-wrap .search-area .condition {
+	margin: 0;
+}
+.mypage-wrap .board-wrap .search-area .condition .btn-primary {
+	min-width: 63px;
+}
+.mypage-wrap .usage-list li {
+	flex-wrap: wrap;
+	padding: 12px 0;
+}
+.mypage-wrap .usage-list li .cate {
+	display: flex;
+	align-items: center;
+	gap: 0 12px;
+	min-width: 100%;
+}
+.mypage-wrap .usage-list li .time {
+	margin-top: 0;
+}
+.mypage-wrap .usage-list li .subject {
+	margin-top: 2px;
+}
+	
+}
+
+
+/************************************************
+	8. 마이페이지 - 회원정보관리
+************************************************/
+.mypage-wrap .tbl-wrap {
+	border-top: 1px solid #000;
+}
+.mypage-wrap .tbl-wrap table {
+	width: 100%;
+}
+.mypage-wrap .tbl-wrap table caption {
+	height: 0;
+	text-indent: -9999;
+	overflow: hidden;
+}
+.mypage-wrap .tbl-wrap th,
+.mypage-wrap .tbl-wrap td {
+	padding: 17px 28px 17px 0;
+	color: #000;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 24px;
+	border-bottom: 1px solid #ddd;
+}
+.mypage-wrap .tbl-wrap th {
+	width: 228px;
+	padding: 17px 40px 17px 28px;
+	color: #446A5D;
+	text-align: left;
+	vertical-align: middle;
+}
+.mypage-wrap .tbl-wrap th {
+	font-weight: 500;
+}
+.mypage-wrap .tbl-wrap td .input-wrap input {
+	height: 40px;
+	font-size: 14px;
+}
+.mypage-wrap .tbl-wrap td .select-wrap select {
+	height: 40px;
+	font-size: 14px;
+}
+.mypage-wrap .tbl-wrap td .input-wrap input::placeholder {
+	font-size: 14px;
+}
+.mypage-wrap .tbl-wrap td .guide-txt {
+	margin-top: 4px;
+	color: #999;
+	font-size: 13px;
+	line-height: 20px;
+	word-break: keep-all;
+}
+.mypage-wrap .tbl-wrap td .input-wrap.half,
+.mypage-wrap .tbl-wrap td .select-wrap.half {
+	max-width: 330px;
+}
+.mypage-wrap .tbl-wrap td .button-wrap {
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+/* 비밀번호 변경(레이어 팝업) */
+.layer-pop .change-passowrd .title {
+	font-size: 16px;
+	line-height: 24px;
+}
+.layer-pop .change-passowrd .sub-title {
+	margin-top: 4px;
+	color: #888;
+	font-size: 14px;
+	line-height: 24px;
+}
+.layer-pop .change-passowrd .page-notice {
+	padding: 12px;
+}
+
+@media screen and (max-width: 767px) {
+
+/************************************************
+	8. 마이페이지 - 회원정보관리
+************************************************/
+.mypage-wrap .tbl-wrap th,
+.mypage-wrap .tbl-wrap td {
+	padding: 16px 0;
+	font-size: 14px;
+}
+.mypage-wrap .tbl-wrap th {
+	width: 110px;
+	padding: 16px 0;
+	text-align: left;
+}
+.mypage-wrap .tbl-wrap th {
+	font-weight: 500;
+}
+	
+}
+
+
+/************************************************
+	8. 마이페이지 - 회원탈퇴
+************************************************/
+.mypage-wrap .notice-area strong.txt {
+	display: block;
+	margin-top: 40px;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 24px;
+}
+.mypage-wrap .notice-area .guide-txt {
+	margin-bottom: 40px;
+	color: #666;
+	font-size: 15px;
+	line-height: 24px;
+}
+.mypage-wrap .notice-area .title {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+}
+.mypage-wrap .notice-area li {
+	padding-left: 13px;
+	text-indent: -13px;
+	counter-increment: notice;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 24px;
+}
+.mypage-wrap .notice-area li::before {
+	content: counter(notice) ". ";
+}
+.mypage-wrap .notice-area .agree {
+	margin: 40px 0;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+
+/************************************************
+	8. 마이페이지 - 회원탈퇴
+************************************************/
+	
+}

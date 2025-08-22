@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>지역아동센터 플랫폼 퍼블작업리스트</title>
+<link href="static/css/all.css" rel="stylesheet" />
+<script src="static/js/jquery.min.js"></script>
+
+<!-- 파일구조도 스타일 -->
+<style>
+.guide_page header { width: 100%; background-color: #333; }
+.guide_page header .inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 20px 20px 20px 0; color: #fff; font-size: 20px; }
+.guide_page header .logo { width: 100%; font-size: 20px; line-height: 42px; }
+.guide_page .container { display: block; max-width: 1200px; padding: 40px 0; margin: 0 auto; }
+.guide_page .page-title { font-size: 25px; font-weight: 600; }
+.guide_page .page-note { margin: 25px 0 35px; padding: 25px; background-color: #f8f8f8; border-left: 5px solid #666; border-radius: 5px; }
+/* 안내 */
+.guide ul.info { margin: 0 10px 30px 10px; }
+.guide ul.info li { display: flex; position: relative; padding-left: 8px; line-height: 32px; }
+.guide ul.info li::before { content: '✔'; margin-right: 3px; }
+
+.guide-table-wrap { border-top: 1px solid #000; margin-bottom: 50px; }
+.guide-table-wrap table { width: 100%; border-left: 1px solid #ddd; }
+.guide-table-wrap table th { text-align: center; font-weight: 600; }
+.guide-table-wrap table td { padding: 0 12px; }
+.guide-table-wrap table td.td-title { text-align: center; font-size: 13px; font-weight: 600; background-color: #eee; }
+.guide-table-wrap table td.last_modified { text-align: center; }
+.guide-table-wrap table th,
+.guide-table-wrap table td { height: var(--table-row-height); border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.guide-table-wrap table td[class^="bg-"] { color: #fff; }
+.guide-table-wrap table td a:hover { color: var(--primary); }
+</style>
+</head>
+
+<body class="guide_page">
+	<header>
+		<div class="inner">
+			<div class="logo">지역아동센터 사용자 퍼블작업리스트</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<article class="guide">
+			<h3 class="guide-title">페이지 분류</h3>
+
+			<ul class="info">
+				<!-- <li>경로 : ./pages/</li> -->
+				<li>
+					분류 :
+					<div class="badge-list">
+						<span class="badge-primary">MODAL</span> (Layer Popup) 
+						<span class="badge-info">WINDOW</span> (window Popup) 
+					</div>
+				</li>
+			</ul>
+
+			<div class="guide-table-wrap">
+				<table>
+					<colgroup>
+						<col width="150px" />
+						<col width="160px" />
+						<col width="150px" />
+						<col width="200px" />
+						<col width="110px" />
+						<col width="*" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Depth-1</th>
+							<th>Depth-2</th>
+							<th>Depth-3</th>
+							<th>파일</th>
+							<th>최종작업일</th>
+							<th>비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="100" class="td-title">메인 (pages/0.메인)</td>
+						</tr>
+						<tr>
+							<td>메인</td>
+							<td>메인</td>
+							<td></td>
+							<td><a href="pages/0.메인/메인.html" target="_sub">메인.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 영양소분석 -->
+						<tr>
+							<td colspan="100" class="td-title">영양소분석 (pages/1.영양소분석)</td>
+						</tr>
+						<tr>
+							<td rowspan="2">영양소분석</td>
+							<td>영양소분석 리포트</td>
+							<td></td>
+							<td><a href="pages/1.영양소분석/영양소분석_리포트.html" target="_sub">영양소분석_리포트.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>식단표 관리</td>
+							<td></td>
+							<td><a href="pages/1.영양소분석/식단표관리.html" target="_sub">식단표관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 지출증빙 -->
+						<tr>
+							<td colspan="100" class="td-title">지출증빙 (pages/2.지출증빙)</td>
+						</tr>
+						<tr>
+							<td rowspan="2">지출증빙</td>
+							<td>지출증빙서류 관리</td>
+							<td></td>
+							<td><a href="pages/2.지출증빙/지출증빙서류_관리.html" target="_sub">지출증빙서류_관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>지출증빙서류 승인관리</td>
+							<td></td>
+							<td><a href="pages/2.지출증빙/지출증빙서류_승인관리.html" target="_sub">지출증빙서류_승인관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 모니터링 -->
+						<tr>
+							<td colspan="100" class="td-title">모니터링 (pages/3.모니터링)</td>
+						</tr>
+						<tr>
+							<td rowspan="4">모니터링</td>
+							<td>보조금 설정 관리</td>
+							<td></td>
+							<td><a href="pages/3.모니터링/보조금설정관리.html" target="_sub">보조금설정관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>급식정산표 조회</td>
+							<td></td>
+							<td><a href="pages/3.모니터링/급식정산표조회.html" target="_sub">급식정산표조회.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>출석부 조회</td>
+							<td></td>
+							<td><a href="pages/3.모니터링/출석부조회.html" target="_sub">출석부조회.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>급식부 조회</td>
+							<td></td>
+							<td><a href="pages/3.모니터링/급식부조회.html" target="_sub">급식부조회.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 정산보고서 -->
+						<tr>
+							<td colspan="100" class="td-title">정산보고서 (pages/4.정산보고서)</td>
+						</tr>
+						<tr>
+							<td>정산보고서</td>
+							<td>정산보고서 조회</td>
+							<td></td>
+							<td><a href="pages/4.정산보고서/정산보고서조회.html" target="_sub">정산보고서조회.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 직원관리 -->
+						<tr>
+							<td colspan="100" class="td-title">직원관리 (pages/5.직원관리)</td>
+						</tr>
+						<tr>
+							<td rowspan="2">직원관리</td>
+							<td>승인요청관리</td>
+							<td></td>
+							<td><a href="pages/5.직원관리/승인요청관리.html" target="_sub">승인요청관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>직원정보관리</td>
+							<td></td>
+							<td><a href="pages/5.직원관리/직원정보관리.html" target="_sub">직원정보관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 고객센터 -->
+						<tr>
+							<td colspan="100" class="td-title">고객센터 (pages/6.고객센터)</td>
+						</tr>
+						<tr>
+							<td rowspan="5">고객센터</td>
+							<td>공지사항</td>
+							<td>목록</td>
+							<td><a href="pages/6.고객센터/공지사항.html" target="_sub">공지사항.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>상세</td>
+							<td><a href="pages/6.고객센터/공지사항상세.html" target="_sub">공지사항상세.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>쓰기</td>
+							<td><a href="pages/6.고객센터/공지사항쓰기.html" target="_sub">공지사항쓰기.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>FAQ</td>
+							<td></td>
+							<td><a href="pages/6.고객센터/FAQ.html" target="_sub">FAQ.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>1:1문의</td>
+							<td></td>
+							<td><a href="pages/6.고객센터/일대일문의.html" target="_sub">일대일문의.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 회원가입 -->
+						<tr>
+							<td colspan="100" class="td-title">회원가입 (pages/6.회원가입)</td>
+						</tr>
+						<tr>
+							<td rowspan="4">회원가입</td>
+							<td>약관동의</td>
+							<td></td>
+							<td><a href="pages/6.회원가입/약관동의.html" target="_sub">약관동의.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>본인인증</td>
+							<td></td>
+							<td><a href="pages/6.회원가입/본인인증.html" target="_sub">본인인증.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>정보입력</td>
+							<td></td>
+							<td><a href="pages/6.회원가입/정보입력.html" target="_sub">정보입력.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>가입완료</td>
+							<td></td>
+							<td><a href="pages/6.회원가입/가입완료.html" target="_sub">가입완료.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 로그인 -->
+						<tr>
+							<td colspan="100" class="td-title">로그인 (pages/7.로그인)</td>
+						</tr>
+						<tr>
+							<td rowspan="4">로그인</td>
+							<td>로그인</td>
+							<td></td>
+							<td><a href="pages/7.로그인/로그인.html" target="_sub">로그인.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>아이디찾기</td>
+							<td></td>
+							<td><a href="pages/7.로그인/아이디찾기.html" target="_sub">아이디찾기.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>인증성공 및 불가</td>
+							<td><a href="pages/7.로그인/인증여부팝업.html" target="_sub">인증여부팝업.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td><span class="badge-primary">MODAL</span></td>
+						</tr>
+						<tr>
+							<td>비밀번호찾기</td>
+							<td></td>
+							<td><a href="pages/7.로그인/비밀번호찾기.html" target="_sub">비밀번호찾기.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td><span class="badge-primary">MODAL</span></td>
+						</tr>
+
+						<!-- 마이페이지 -->
+						<tr>
+							<td colspan="100" class="td-title">마이페이지 (pages/8.마이페이지)</td>
+						</tr>
+						<tr>
+							<td rowspan="4">마이페이지</td>
+							<td>나의 바우처</td>
+							<td></td>
+							<td><a href="pages/8.마이페이지/나의바우처.html" target="_sub">나의바우처.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>회원정보관리</td>
+							<td></td>
+							<td><a href="pages/8.마이페이지/회원정보관리.html" target="_sub">회원정보관리.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>비밀번호변경</td>
+							<td><a href="pages/8.마이페이지/비밀번호변경.html" target="_sub">비밀번호변경.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td><span class="badge-primary">MODAL</span></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>회원탈퇴</td>
+							<td><a href="pages/8.마이페이지/회원탈퇴.html" target="_sub">회원탈퇴.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+
+						<!-- 기타 -->
+						<tr>
+							<td colspan="100" class="td-title">기타 (pages/9.기타)</td>
+						</tr>
+						<tr>
+							<td rowspan="12">기타</td>
+							<td>이용약관</td>
+							<td></td>
+							<td><a href="pages/9.기타/이용약관.html" target="_sub">이용약관.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>개인정보처리방침</td>
+							<td></td>
+							<td><a href="pages/9.기타/개인정보처리방침.html" target="_sub">개인정보처리방침.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<!-- <tr>
+							<td>개인정보수집이용동의서</td>
+							<td></td>
+							<td><a href="pages/9.기타/개인정보수집이용동의서.html" target="_sub">개인정보수집이용동의서.html</a></td>
+							<td class="last_modified"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>개인정보 제3자 제공동의</td>
+							<td></td>
+							<td><a href="pages/9.기타/개인정보제3자제공동의.html" target="_sub">개인정보제3자제공동의.html</a></td>
+							<td class="last_modified"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>위치기반 서비스 이용약관</td>
+							<td></td>
+							<td><a href="pages/9.기타/위치기반서비스이용약관.html" target="_sub">위치기반서비스이용약관.html</a></td>
+							<td class="last_modified"></td>
+							<td></td>
+						</tr> -->
+						<tr>
+							<td>404에러</td>
+							<td></td>
+							<td><a href="pages/9.기타/404에러.html" target="_sub">404에러.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>500에러</td>
+							<td></td>
+							<td><a href="pages/9.기타/500에러.html" target="_sub">500에러.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>우편번호</td>
+							<td></td>
+							<td><a href="pages/9.기타/우편번호.html" target="_sub">우편번호.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td><span class="badge-primary">MODAL</span></td>
+						</tr>
+						<tr>
+							<td>기본alert</td>
+							<td>제목있는거&원버튼</td>
+							<td><a href="pages/9.기타/기본alert.html" target="_sub">기본alert.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td><span class="badge-primary">MODAL</span></td>
+						</tr>
+						<tr>
+							<td>기본alert2</td>
+							<td>제목없는거&투버튼</td>
+							<td><a href="pages/9.기타/기본alert2.html" target="_sub">기본alert2.html</a></td>
+							<td class="last_modified">2025-08-00</td>
+							<td><span class="badge-primary">MODAL</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</article>
+	</div><!-- .container -->
+</body>
+</html>

@@ -1,0 +1,749 @@
+@charset "UTF-8";
+/**
+ * "컴포넌트" 스타일을 여기에 정의합니다.
+ * button, badge, select, input, layer popup 등을 포함합니다.
+ * 이 파일은 all.css에서 import되어 사용됩니다.
+**/
+
+/************************************************
+	BUTTON
+************************************************/
+button {
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+}
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0 4px;
+	height: 44px;
+	padding: 0 12px;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: #fff;
+	border: 1px solid #1D2129;
+	border-radius: var(--radius);
+	cursor: pointer;
+}
+.btn span {
+	white-space: nowrap;
+}
+
+.btn-line {
+	min-width: 80px;
+	color: #1D2129;
+}
+
+.btn-more {
+	min-width: 256px;
+	height: 52px;
+	color: #1D2129;
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 40px;
+}
+.btn-more::after {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('../images/icon/ic_arrow_bottom2.svg') no-repeat center center;
+}
+.btn-primary {
+	min-width: 100px;
+	color: #fff;
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+
+
+
+
+
+
+.btn-sub {
+	color: #fff;
+	font-weight: 500;
+	background-color: var(--sub);
+	border-color: var(--sub);
+}
+.btn-line-primary {
+	color: var(--primary);
+	border-color: var(--primary);
+}
+.btn-line-white {
+	color: #fff;
+	background-color: transparent;
+	border-color: #fff;
+}
+.btn-line-sub {
+	color: var(--sub);
+	border-color: var(--sub);
+}
+.btn-line-red {
+	color: var(--red);
+	border-color: var(--red);
+}
+.btn-blue {
+	height: 24px;
+	padding: 0 8px;
+	color: var(--primary);
+	line-height: 22px;
+	background-color: #E5F0F0;
+	border-color: #E5F0F0;
+}
+.btn-info {
+	height: 48px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 46px;
+	background-color: #666;
+	border-color: #666;
+	border-radius: 2px;
+}
+.btn-black {
+	height: 48px;
+	color: #000;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 46px;
+	background-color: #fff;
+	border-color: #333;
+	border-radius: 2px;
+}
+.btn-txt {
+	border: 0;
+	border-radius: 0;
+}
+
+.btn-icon {
+	min-width: 28px;
+	padding: 0 3px;
+	border: 0;
+}
+.btn-icon:disabled {
+	background-color: transparent;
+}
+.btn-icon i {
+	font-size: 24px;
+}
+
+/* 버튼 비활성화 */
+button:disabled {
+	color: var(--disabled);
+	background-color: #eee;
+	border-color: var(--disabled);
+	/* cursor: not-allowed !important; */
+}
+
+
+/************************************************
+	BADGE
+************************************************/
+.badge-primary {
+	display: inline-block;
+	height: 18px;
+	padding: 0 3px;
+	color: var(--primary);
+	font-size: 11px;
+	line-height: 16px;
+	border: 1px solid var(--primary);
+	border-radius: 2px;
+	background-color: #fff;
+}
+.badge-red {
+	display: inline-block;
+	padding: 0 2px;
+	color: var(--red) !important;
+	font-size: 11px;
+	line-height: 12px;
+	border: 1px solid var(--red);
+	border-radius: 4px;
+}
+.badge-info {
+	display: inline-block;
+	padding: 0 2px;
+	color: var(--info) !important;
+	font-size: 11px;
+	line-height: 12px;
+	border: 1px solid var(--info);
+	border-radius: 4px;
+}
+.badge-blue {
+	display: inline-block;
+	padding: 0 2px;
+	color: var(--blue) !important;
+	font-size: 11px;
+	line-height: 12px;
+	border: 1px solid var(--blue);
+	border-radius: 4px;
+}
+
+
+/************************************************
+	FORM CONTAINER 컴포넌트 감싸는 div
+************************************************/
+.form-container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+}
+
+/************************************************
+	SELECT
+************************************************/
+.select-wrap select {
+	height: 44px;
+	min-height: 40px;
+	min-width: 140px;
+	padding: 8px 12px;
+	border: 1px solid #E5E6EC;
+}
+.select-wrap select:hover {
+	background-color: #fff;
+}
+.select-wrap select:focus-within {
+	background-color: #fff;
+	border-color: #000;
+}
+.select-wrap select:focus-within selectedcontent {
+	color: #1D2129;
+}
+.select-wrap select:focus-within path {
+  stroke: #1D2129; /* 포커스 시 path 색상 변경 */
+}
+
+.select-wrap select,
+.select-wrap select::picker(select) {
+	appearance: base-select;
+}
+.select-wrap select::picker(select) {
+	transition:
+		opacity .2s ease,
+		transform .2s var(--ease-out-3),
+		display .2s allow-discrete,
+		overlay .2s allow-discrete;
+}
+.select-wrap select::picker-icon {
+	display: none;
+}
+.select-wrap select:not(:open)::picker(select) {
+	opacity: 0;
+	transform: scale(.95);
+}
+.select-wrap select:open::picker(select) {
+	opacity: 1;
+	transform: scale(1);
+}
+.select-wrap select selectedcontent > * {
+	transition:
+		transform 1s var(--ease-spring-4),
+		display 1s allow-discrete,
+		opacity 1s;
+	opacity: 1;
+}
+@starting-style {
+	.select-wrap select selectedcontent > * {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+}
+.select-wrap select > button:focus-visible {
+	outline-offset: -2px;
+}
+.select-wrap select > button:has(selectedcontent) {
+	align-items: start;
+	min-inline-size: 20ch;
+	flex-direction: column;
+}
+.select-wrap select .choose-wrap {
+	inline-size: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0;
+	font-size: 16px;
+	line-height: 24px;
+}
+.select-wrap select .choose-wrap svg {
+	inline-size: 2ch;
+	transition: transform .3s var(--ease-elastic-out-2);
+}
+.select-wrap select:open .choose-wrap svg {
+	transform: rotate(.5turn);
+}
+.select-wrap select::picker(select) {
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+@media (forced-colors: none) {
+	select::picker(select) {
+		border: none;
+	}
+}
+
+.select-wrap select .option-wrap {
+	min-inline-size: calc(anchor-size(self-inline) + 20px);
+	margin-top: 8px;
+	scroll-behavior: smooth;
+	border: 1px solid #000;
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+.select-wrap select .option-wrap.scrollable {
+	max-block-size: 20lh;
+	scrollbar-width: thin;
+}
+.select-wrap select .option-wrap label {
+	display: block;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	color: #1D2129;
+	background-color: #fff;
+}
+.select-wrap select .option-wrap option {
+	display: flex;
+	align-items: center;
+	gap: 0 5px;
+	padding: 12px 16px 12px 6px;
+	color: #1D2129;
+	font-size: 16px;
+	cursor: pointer;
+	outline-offset: -2px;
+}
+.select-wrap select .option-wrap option + option {
+	border-top: 1px solid #F2F3F5;
+}
+.select-wrap select .option-wrap option:focus-visible {
+	outline-offset: -2px;
+}
+.select-wrap select .option-wrap option:is(:focus, :hover) {
+	background-color: #F7F8FA;
+}
+.select-wrap select .option-wrap option:checked {
+	background-color: #F7F8FA;
+}
+.select-wrap select option[hidden] {
+	display: none; /* 드롭다운 목록에서 숨기기 */
+}
+
+/* 월 선택 select 넓이 */
+.select-wrap select[name="month"] {
+	min-width: 80px;
+}
+
+/* 일반 select */
+:not(.select-wrap) > select {
+	flex: 1;
+	height: 44px;
+	min-height: 40px;
+	min-width: 140px;
+	padding: 0 16px;
+	font-size: 16px;
+	line-height: 24px;
+	background: #fff url('../images/icon/ic_arrow_bottom.svg') no-repeat calc(100% - 12px) center;
+	border: 1px solid #E5E6EC;
+	border-radius: var(--radius);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+:not(.select-wrap) > select option[value=""][disabled] {
+	display: none;
+}
+:not(.select-wrap) > select:invalid{
+	color: #999;
+}
+:not(.select-wrap) > select:disabled {
+	background-color: #f4f4f4;
+}
+
+
+/************************************************
+	INPUT
+************************************************/
+.input-wrap input:not([type="checkbox"],[type="radio"]) {
+	width: 100%;
+	height: 44px;
+	padding: 9px 16px;
+	color: #1D2129;
+	font-size: 16px;
+	/* background-color: #fff; */
+	border: 1px solid #E5E6EC;
+	border-radius: var(--radius);
+	box-sizing: border-box;
+}
+.input-wrap input::placeholder {
+	font-size: 16px;
+}
+.input-wrap:has(input:focus) {
+	border-color: #000;
+}
+.input-wrap input:read-only,
+.input-wrap input:disabled {
+	background-color: #f4f4f4;
+}
+/* 달력 input */
+.input_datepicker_wrap {
+	position: relative;
+	max-width: 185px;
+	background-color: #fff;
+}
+.input_datepicker_wrap::after {
+	content: '';
+	display: block;
+	position: absolute;
+	right: 16px;
+	top: 12px;
+	z-index: 0;
+	width: 24px;
+	height: 24px;
+	background: url('../images/icon/ic_calendar.svg') no-repeat center center;
+}
+.input_datepicker_wrap input {
+	position: relative;
+	z-index: 1;
+	background-color: transparent;
+	cursor: default;
+}
+
+/* input */
+.input-area li {
+	margin-top: 20px;
+}
+.input-area li label {
+	display: inline-block;
+	margin-bottom: 4px;
+	padding: 0 4px;
+	color: var(--sub);
+	font-size: 14px;
+	line-height: 20px;
+}
+.input-area li .input-wrap {
+	display: flex;
+	align-items: center;
+	gap: 0 6px;
+}
+.input-area li input::placeholder {
+	color: #999;
+	font-size: 16px;
+	font-weight: 500;
+}
+label[aria-required="true"]::after,
+.input-area li label[aria-required="true"]::after {
+	content: '*';
+	margin-left: 3px;
+	color: var(--red);
+}
+.input-area > li.row {
+	display: flex;
+	gap: 0 16px;
+}
+.input-area > li.row .col {
+	flex: 1;
+}
+
+
+/************************************************
+	TEXTAREA
+************************************************/
+textarea {
+	width: 100%;
+	padding: 9px 16px;
+	font-size: 16px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: var(--radius);
+	box-sizing: border-box;
+}
+textarea::placeholder {
+	color: #999;
+	font-size: 16px;
+}
+
+
+/************************************************
+	PAGE MEMO (페이지 상단 또는 팝업 상단 메모)
+************************************************/
+.page-memo {
+	margin-bottom: 20px;
+}
+.page-memo .list li {
+	display: inline-block;
+	position: relative;
+	padding-left: 18px;
+	color: #666;
+	font-size: 14px;
+	line-height: 24px;
+}
+.page-memo .list li::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	left: 8px;
+	top: 11px;
+	width: 3px;
+	height: 3px;
+	background-color: #666;
+	border-radius: 3px;
+}
+
+/* 페이지 하단 또는 팝업 하단 유의사항 */
+.page-notice {
+	position: relative;
+	margin-top: 20px;
+	padding: 12px 12px 12px 28px;
+	background-color: #f4f4f4;
+	border-radius: 2px;
+}
+.page-notice li {
+	position: relative;
+	padding-left: 16px;
+	color: var(--info);
+	font-size: 15px;
+	line-height: 24px;
+	word-break: keep-all;
+}
+.page-notice li a {
+	color: var(--info);
+}
+.page-notice li::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	left: 6px;
+	top: 11px;
+	width: 3px;
+	height: 3px;
+	background-color: #666;
+	border-radius: 2px;
+}
+.page-notice li.title {
+	padding-left: 25px;
+	margin-left: -4px;
+}
+.page-notice li:only-child {
+	padding-left: 25px;
+	margin-left: -17px;
+}
+.page-notice li.title {
+	margin-left: 0;
+}
+.page-notice li:only-child::before,
+.page-notice li.title::before {
+	content:'\e916';
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	color: var(--info);
+	font-family: "icomoon";
+	font-size: 23px;
+	background-color: transparent;
+}
+
+
+/************************************************
+	TABLE
+************************************************/
+table caption {
+	height: 0;
+	text-indent: -9999;
+	overflow: hidden;
+}
+table.all-center th,
+table.all-center td {
+	text-align: center !important;
+}
+.tbl-data {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+.tbl-data thead th {
+    position: sticky;
+    top: 0px;
+	padding: 12px 0;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: center;
+	background-color: #fff;
+	border-bottom: 1px solid #333;
+}
+.tbl-data td {
+	padding: 8px 0;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+
+/************************************************
+	LAYER POPUP (1024 / 940 / 360)
+************************************************/
+.layer-pop {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 900;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.35);
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
+}
+.layer-pop .layer-wrap {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 600;
+	width: 100%;
+	max-width: 1200px;
+	min-width: 350px;
+	max-height: 92vh;
+	padding: 0 40px 40px 40px;
+	background-color: #fff;
+	border-radius: 20px;
+	/* overflow: hidden; */
+	box-shadow: 0 1px 5px 0 rgba(9, 30, 66, 0.10), 0 0 1px 0 rgba(9, 30, 66, 0.10);
+	transform: translate(-50%, -50%);
+}
+.layer-pop .layer-wrap > .button-wrap {
+	position: absolute;
+	right: 26px;
+    top: 26px;
+}
+.layer-pop .layer-header {
+	position: relative;
+	min-height: 28px;
+	padding: 40px 0;
+	color: #000;
+}
+.layer-pop .layer-header .layer-title {
+	color: #272E3B;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 36px;
+}
+.layer-pop .layer-header .button-wrap {
+	position: absolute;
+	right: -14px;
+    top: 26px;
+}
+.layer-pop .btn_close {
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	background: url('../images/icon/ic_close.svg') no-repeat center center;
+	border: 0;
+}
+.layer-pop .layer-body {
+	flex: 1;
+	/* max-height: 500px; */
+	min-width: 100px;
+	/* padding: 20px 3px 20px; */
+	overflow-y: auto;
+}
+.layer-pop .layer-body .section-header {
+	margin-bottom: 4px;
+}
+.layer-pop .layer-body .section-header .title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 30px;
+}
+.layer-pop .layer-body p.txt {
+	font-size: 16px;
+	line-height: 28px;
+	text-align: center;
+	word-break: keep-all;
+}
+.layer-pop .layer-body p.txt2 {
+	font-size: 14px;
+	line-height: 24px;
+	word-break: keep-all;
+}
+.layer-pop .layer-body .guide-txt {
+	margin-top: 20px;
+	padding-left: 10px;
+	color: var(--info);
+	font-size: 14px;
+	line-height: 24px;
+	word-break: keep-all;
+	text-indent: -10px;
+}
+
+.layer-pop .layer-footer {
+	padding-top: 20px;
+}
+.layer-pop .layer-footer .button-wrap {
+	justify-content: center;
+	gap: 0 16px;
+}
+.layer-pop .layer-footer .button-wrap .btn {
+	min-width: 80px;
+	padding: 0 16px;
+	font-size: 14px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+.select-wrap select,
+.input-wrap input:not([type="checkbox"],[type="radio"]) {
+	padding: 9px 8px;
+}
+
+/* 페이지 하단 또는 팝업 하단 유의사항 */
+.page-notice {
+	padding-left: 16px;
+}
+
+/* 2025-07-16 추가 start */
+.page-notice li:only-child::before,
+.page-notice li.title::before {
+	left: 7px;
+	top: 1px;
+	width: 16px;
+	height: 16px;
+	font-size: 17px;
+}
+/* 2025-07-16 추가 end */
+
+
+/************************************************
+	LAYER POPUP
+************************************************/
+.layer-pop .layer-wrap {
+	max-width: calc(100% - 16px) !important;
+	min-width: 300px;
+	padding: 20px;
+}
+.layer-pop .layer-header {
+	padding: 0;
+}
+.layer-pop .layer-header .layer-title {
+	font-size: 20px;
+	line-height: 32px;
+}
+.layer-pop .layer-header .button-wrap {
+	top: 0;
+}
+	
+}

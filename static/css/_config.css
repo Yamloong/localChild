@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/**
+ * CSS 상수 항목(컬러, 폰트 사이즈, 화면 사이즈 등등)을 이 파일에 정의합니다.
+ * 이 파일은 all.css에서 import되어 사용됩니다.
+ *
+ * [Selector Naming Convention]
+ * id : 스크립트로 제어할 엘리먼트에만 사용함
+ * class : kebab case
+ **/
+
+@font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('../font/PretendardVariable.woff2') format('woff2-variations');
+}
+
+:root {
+	/* 기본 폰트 정보 */
+	--base-font-family: "Pretendard Variable", "맑은 고딕", Arial, Tahoma;
+	--base-font-size: 13px;
+	/* --base-letter-spacing: -0.025em; */
+
+	/* 기본 폰트 색상 */
+	--base-text-color: #6B7785;
+	--sub-text-color: #272E3B;
+
+	/* 자간 */
+	--base-letter-spacing: 0;
+
+	/* 컬러칩 정보 */
+	--primary: #4E5969;
+	--sub: #043D2B;
+	--red: #F84D4D;
+	--info: #666;
+	--blue: #177EDC;
+	/* --error: #FD7A01; */
+
+	/* 사이트 넓이 사이즈 */
+	--page-max-width: 1280px;
+	--page-width: 1280px;
+
+	/* 기본 배경색 */
+	--base-bg-color: #F1F4F8;
+
+	/* 타이틀 폰트 정보 */
+	--title-font-size: 32px;
+	--sub-font-size: 14px;
+
+	/* 컴포넌트 둥근 각도 */
+	--radius: 8px;
+
+	/* disabled */
+	--disabled: #bbb;
+
+	/* POPUP 타이틀 폰트 정보 */
+	--popup-title-font-size: 20px;
+	--popup-sub-font-size: 16px;
+
+	--table-row-height: 28px;
+
+	/* 검색 영역 1칸 넓이 */
+	--col-width: 8.333%;
+}
+
+
+/* 전체 스크롤바 custom */
+* {
+	scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+::-webkit-scrollbar-track {
+	background-color: #4242421a;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: #c6c6c6;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #848484; 
+}
+
+/* disabled 요소에 마우스 올렸을때 커서 모양*/
+/* :disabled {
+	cursor: not-allowed;
+	pointer-events: all !important;
+} */
+
+/* [웹접근성] 전체 사이트의 focus 가능한 요소에 outline을 주려면 아래 comment를 풀 것. */
+:focus {
+	/* outline: 0; */
+	outline: solid 2px #FB721F !important; 
+	/* outline-offset: -2px; */
+}
+
+/* placeholder */
+::placeholder {
+	color: #6B7785;
+	font-size: 12px;
+}
+
+xmp {
+	white-space: pre-wrap;
+}
+
+
+/************************************************
+	COLOR
+************************************************/
+.text-primary {
+	color: var(--primary) !important;
+}
+.text-sub {
+	color: var(--sub) !important;
+}
+.text-red {
+	color: var(--red) !important;
+}
+.text-warning {
+	color: var(--warning) !important;
+}
+.text-info {
+	color: var(--info) !important;
+}
+
+.bg-primary {
+	background-color: var(--primary);
+}
+.bg-red {
+	background-color: var(--red);
+}
+.bg-warning {
+	background-color: var(--warning);
+}
+
+
+.keyword {
+	color: var(--primary) !important;
+}
+
+/************************************************
+	ALIGN
+************************************************/
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+
+/************************************************
+	BORDER
+************************************************/
+.bt0 { border-top: 0 !important; }
+
+
+/************************************************
+	MARGIN
+************************************************/
+.mt0 { margin-top: 0 !important; }
+.mt12 { margin-top: 12px !important; }
+.mt20 { margin-top: 20px !important; }
+
+.ml7 { margin-left: 7px !important; }
+.ml10 { margin-left: 10px !important; }
+
+.mb0 { margin-bottom: 0px !important; }
+.mb8 { margin-bottom: 8px !important; }
+.mb20 { margin-bottom: 20px !important; }
+
+/************************************************
+	PADDING
+************************************************/
+.pd0 { padding: 0 !important; }
+
+
+/************************************************
+	WIDTH
+************************************************/
+.w100 { width: 100px; }

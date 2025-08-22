@@ -1,0 +1,496 @@
+@charset "UTF-8";
+/**
+ * "메인" 화면 스타일을 여기에 정의합니다.
+ * 이 파일은 all.css에서 import되어 사용됩니다.
+**/
+
+/************************************************
+	메인
+************************************************/
+.main-page {
+	min-width: 1280px;
+}
+.main-page header > .inner {
+	max-width: 1280px;
+	padding: 0 40px;
+}
+.main-page #container {
+	background-color: #F6F9FF;
+}
+.main-page #container .inner {
+	max-width: 1280px;
+	padding: 64px 40px 80px;
+}
+
+/* 메인비주얼 이미지 */
+.main-page .main-visual {
+	border-radius: 24px;
+	overflow: hidden;
+}
+
+/* 네모박스 */
+.main-page .box-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 64px 24px;
+	padding-top: 64px;
+}
+.main-page .box-wrap .box {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	width: calc(50% - 12px);
+	padding: 40px;
+	background-color: #fff;
+	border-radius: 32px;
+	box-shadow: 0 1px 5px 0 rgba(9, 30, 66, 0.10), 0 0 1px 0 rgba(9, 30, 66, 0.10);
+}
+.main-page .box-wrap .box .txt {
+	color: #1D2129;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 30px;
+	word-break: keep-all;
+}
+/* 영양소분석 서비스 */
+.main-page .box-wrap .box.nutrient {
+	height: 400px;
+	background: url('../images/main/img_nutrient.png') no-repeat center center, linear-gradient(180deg, #5BADFB, #257DF9);
+	background-size: 100% auto;
+	box-shadow: none;
+}
+/* 영수증 자동인식 서비스 */
+.main-page .box-wrap .box.receipt {
+	background: url('../images/main/img_receipt.png') no-repeat center center, linear-gradient(180deg, #00D27B, #00B732);
+	background-size: 100% auto;
+	box-shadow: none;
+}
+.main-page .box-wrap .box.nutrient .link,
+.main-page .box-wrap .box.receipt .link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 50px;
+	padding: 0 12px;
+	color: #272E3B;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 50px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 12px;
+}
+.main-page .swipe .box-wrap .box .link::after {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url('../images/icon/ic_arrow_right.svg') no-repeat;
+}
+/* 공지사항 */
+.main-page .box-wrap .box.notice {
+	height: 280px;
+}
+.main-page .box-wrap .box.notice .list li a {
+	display: flex;
+	gap: 0 14px;
+	color: #6B7785;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+}
+.main-page .box-wrap .box.notice .list li + li {
+	margin-top: 8px;
+}
+.main-page .box-wrap .box.notice .list li .subject {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.main-page .box-wrap .box.notice .list li .subject::before {
+	content: '・';
+	display: inline-block;
+	width: 15px;
+	margin-right: 8px;
+	text-align: center;
+}
+/* 자주하는 질문 */
+.main-page .box-wrap .box.faq {
+	position: relative;
+}
+.main-page .box-wrap .box.faq .question {
+	height: 50px;
+	padding: 13px 16px;
+	margin-top: 24px;
+	color: #1D2129;
+	font-size: 18px;
+	font-weight: 700;
+	background-color: #F6F9FF;
+	border-radius: var(--radius);
+}
+.main-page .box-wrap .box.faq .question::before {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: -2px 8px 0 0;
+	vertical-align: middle;
+	background: url('../images/icon/ic_message.svg') no-repeat center center;
+}
+.main-page .box-wrap .box.notice .link,
+.main-page .box-wrap .box.faq .link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #000;
+	font-size: 22px;
+	font-weight: 700;
+}
+.main-page .box-wrap .box.notice .link::after,
+.main-page .box-wrap .box.faq .link::after {
+	content: '';
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url('../images/icon/ic_plus.svg') no-repeat center center;
+}
+
+/* 질문 스와이프 */
+.main-page .box-wrap .box.faq .faq-slide {
+	margin: 0 48px;
+	overflow: hidden;
+}
+.main-page .box-wrap .box.faq .swiper-controler {
+	position: absolute;
+	bottom: 80px;
+	width: calc(100% - 80px);
+}
+.main-page .box-wrap .box.faq .swiper-controler button {
+	position: absolute;
+	top: 0;
+	width: 32px;
+	height: 32px;
+	border: 0;
+	text-shadow: none;
+}
+.main-page .box-wrap .box.faq .swiper-controler .faq-button-prev {
+	left: 0;
+	background: url('../images/icon/ic_slide_left.svg') no-repeat center center;
+}
+.main-page .box-wrap .box.faq .swiper-controler .faq-button-next {
+	right: 0;
+	background: url('../images/icon/ic_slide_right.svg') no-repeat center center;
+}
+.main-page .box-wrap .box.faq .swiper-slide {
+	height: 48px;
+	color: #6B7785;
+	font-size: 16px;
+	line-height: 24px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+}
+
+/* 고객센터 */
+.main-page .box.customer {
+	height: 244px;
+}
+.main-page .box.customer .top {
+	display: flex;
+	align-items: flex-end;
+	gap: 0 23px;
+}
+.main-page .box.customer .top .time {
+	color: #4E5969;
+	font-size: 14px;
+	white-space: nowrap;
+}
+.main-page .box.customer .title {
+	color: #272E3B;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 30px;
+}
+.main-page .box.customer .call-center {
+	display: flex;
+	align-items: center;
+	gap: 0 16px;
+}
+.main-page .box.customer .call-center li {
+	flex: 1;
+	height: 56px;
+	padding-left: 68px;
+	color: #1E1E1E;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 26px;
+}
+.main-page .box.customer .call-center li:first-child {
+	background: url('../images/icon/ic_call01.svg') no-repeat left center;
+}
+.main-page .box.customer .call-center li .name {
+	color: #3898FF;
+}
+.main-page .box.customer .call-center li.dashed {
+	flex: 0;
+	height: 48px;
+	padding: 0 11px;
+	border-left: 1px dashed #C9CCD4;
+}
+.main-page .box.customer .call-center li:last-child {
+	background: url('../images/icon/ic_call02.svg') no-repeat left center;
+}
+.main-page .box.customer .call-center li:last-child  .name {
+	color: #00C760;
+}
+
+/* 일대일문의 */
+.main-page .box.inquiry .title {
+	color: #272E3B;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 30px;
+}
+.main-page .box.inquiry .board-center {
+	display: flex;
+	align-items: center;
+	gap: 0 16px;
+}
+.main-page .box.inquiry .board-center li {
+	flex: 1;
+}
+.main-page .box.inquiry .board-center li a {
+	display: block;
+	position: relative;
+	height: 56px;
+	padding-left: 68px;
+	color: #1E1E1E;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 26px;
+}
+.main-page .box.inquiry .board-center li a::after {
+	content:'';
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 12px;
+	width: 32px;
+	height: 32px;
+	background: url('../images/icon/ic_slide_right.svg') no-repeat right center;
+}
+.main-page .box.inquiry .board-center li:first-child a {
+	background: url('../images/icon/ic_inquiry01.svg') no-repeat left center;
+}
+.main-page .box.inquiry .board-center li:last-child a {
+	background: url('../images/icon/ic_inquiry02.svg') no-repeat left center;
+}
+.main-page .box.inquiry .board-center li strong {
+	color: #1D2129;
+	font-size: 18px;
+	font-weight: 700;
+}
+.main-page .box.inquiry .board-center li.dashed {
+	flex: 0;
+	height: 48px;
+	margin: 0 11px;
+	border-left: 1px dashed #C9CCD4;
+}
+
+
+@media screen and (max-width: 767px) {
+	
+/************************************************
+	0. 메인
+************************************************/
+.main-page {
+	min-width: auto;
+}
+.main-page header > .inner {
+	padding: 0 16px;
+}
+.main-page header .top {
+	justify-content: center;
+}
+.main-page header .title {
+	display: none;
+}
+
+/* 햄버거 메뉴 */
+.main-page header .top .btn_menu {
+	position: absolute;
+	top: 16.5px;
+	right: 0;
+}
+
+.main-page #container .inner {
+	padding: 32px 16px;
+}
+
+/* 메인비주얼 이미지 */
+.main-page .main-visual {
+	border-radius: 16px;
+}
+
+/* 네모박스 */
+.main-page .box-wrap {
+	gap: 32px 16px;
+	padding-top: 32px;
+}
+.main-page .box-wrap .box {
+	width: 100%;
+	padding: 24px 16px;
+	border-radius: 16px;
+}
+.main-page .box-wrap .box .title {
+	font-size: 18px;
+	line-height: 24px;
+}
+.main-page .box-wrap .box .txt {
+	font-size: 14px;
+	line-height: 23px;
+}
+
+/* 영양소분석 서비스 & 영수증 자동인식 서비스 */
+.main-page .swipe {
+	margin: 0 -16px;
+	padding: 0 16px;
+	overflow-x: auto;
+}
+.main-page .swipe .box-wrap {
+	width: 510px;
+}
+.main-page .swipe .box-wrap .box {
+	padding: 16px;
+}
+.main-page .box-wrap .box.nutrient,
+.main-page .box-wrap .box.receipt {
+	width: 242px;
+	height: 328px;
+	background-size: 150% auto;
+}
+.main-page .box-wrap .box.nutrient .link,
+.main-page .box-wrap .box.receipt .link {
+	height: 38px;
+	padding: 0 8px;
+	font-size: 14px;
+	line-height: 38px;
+	border-radius: var(--radius);
+}
+
+/* 공지사항 & 자주하는 질문 */
+.main-page .box-wrap .box.notice {
+	height: 206px;
+}
+.main-page .box-wrap .box.notice .link,
+.main-page .box-wrap .box.faq .link {
+	font-size: 18px;
+}
+.main-page .box-wrap .box.notice .link::after,
+.main-page .box-wrap .box.faq .link::after {
+	width: 20px;
+	height: 20px;
+	background: url('../images/icon/ic_plus2.svg') no-repeat center center;
+}
+
+.main-page .box-wrap .box.notice .list li a {
+	gap: 0 10px;
+	color: #1D2129;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 22px;
+}
+
+.main-page .box-wrap .box.faq {
+	height: 190px;
+}
+.main-page .box-wrap .box.faq .question {
+	height: 40px;
+	margin-top: 4px;
+	padding: 8px 12px;
+	color: #1D2129;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 24px;
+	border-radius: 6px;
+}
+.main-page .box-wrap .box.faq .faq-slide {
+	margin: 0 40px;
+}
+.main-page .box-wrap .box.faq .swiper-slide {
+	height: 44px;
+	color: #272E3B;
+	font-size: 14px;
+	line-height: 22px;
+}
+.main-page .box-wrap .box.faq .swiper-controler {
+	bottom: 60px;
+	width: calc(100% - 40px);
+}
+.main-page .box-wrap .box.faq .swiper-controler .faq-button-prev,
+.main-page .box-wrap .box.faq .swiper-controler .faq-button-next {
+	width: 24px;
+	height: 24px;
+	background-size: 100% auto;
+}
+
+/* 고객센터 - 콜센터 */
+.main-page .box.customer {
+	height: auto;
+}
+.main-page .box.customer .top {
+	display: block;
+}
+.main-page .box.customer .top .time {
+	margin: 4px 0 16px;
+	font-size: 12px;
+	line-height: 20px;
+}
+.main-page .box.customer .title,
+.main-page .box.inquiry .title {
+	line-height: 26px;
+}
+
+.main-page .box.customer .call-center {
+	display: block;
+}
+.main-page .box.customer .call-center li {
+	height: 48px;
+	padding: 2px 0 0 60px;
+	font-size: 14px;
+	line-height: 22px;
+	background-size: auto 100% !important;
+}
+.main-page .box.customer .call-center li .name {
+	color: #5BADFB;
+}
+.main-page .box.customer .call-center li.dashed {
+	height: 0;
+	padding: 0;
+	margin: 21px 0;
+	border-left: 0;
+	border-top: 1px dashed #C9CCD4;
+}
+
+/* 고객센터 - 1:1문의 */
+.main-page .box.inquiry .board-center {
+	display: block;
+	margin-top: 16px;
+}
+.main-page .box.inquiry .board-center li a {
+	height: 48px;
+	font-size: 14px;
+	line-height: 22px;
+	background-size: auto 100% !important;
+}
+.main-page .box.inquiry .board-center li.dashed {
+	height: 0;
+	padding: 0;
+	margin: 21px 0;
+	border-left: 0;
+	border-top: 1px dashed #C9CCD4;
+}
+
+}

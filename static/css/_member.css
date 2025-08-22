@@ -1,0 +1,408 @@
+@charset "UTF-8";
+/**
+ * "회원가입" & "로그인" 화면 스타일을 여기에 정의합니다.
+ * 이 파일은 all.css에서 import되어 사용됩니다.
+**/
+
+/************************************************
+	6. 회원가입 & 7. 로그인
+************************************************/
+.login-wrap {
+	max-width: 520px;
+	margin: 0 auto 60px;
+}
+.login-wrap .guide-txt {
+	color: #888;
+	font-size: 14px;
+	line-height: 16px;
+}
+.login-wrap .section-header {
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 30px;
+	border-bottom: 2px solid #000;
+}
+.login-wrap .input-area {
+	margin-bottom: 20px;
+}
+.login-wrap .input-area li {
+	margin-top: 20px;
+}
+.login-wrap .input-area li input[class="id-number"]::placeholder {
+	font-size: 10px;
+	letter-spacing: 1px;
+}
+.login-wrap .input-area li .input-wrap {
+	display: flex;
+	align-items: center;
+	gap: 0 6px;
+}
+.login-wrap .input-area li .input-wrap.half {
+	max-width: 409px;
+}
+.login-wrap .input-area li .input-wrap + .select-wrap {
+	margin-top: 12px;
+}
+.login-wrap .input-area li .input-wrap.address2 input {
+	max-width: 100%;
+}
+.login-wrap .input-area li .input-wrap #address + .btn-line-primary {
+	height: 48px;
+	font-size: 13px;
+}
+.login-wrap .input-area li .input-wrap .btn-info {
+	height: 48px;
+}
+.login-wrap .input-area li .input-wrap .btn-line-primary {
+	height: 32px;
+}
+.login-wrap .input-area li .form-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.login-wrap .input-area li .form-container .select-wrap {
+	min-width: calc(50% - 6px);
+}
+.login-wrap .input-area li .select-wrap {
+	flex-wrap: wrap;
+	gap: 16px;
+}
+.login-wrap .input-area li .select-wrap select {
+	min-width: calc(50% - 8px);
+	height: 48px;
+	font-size: 16px;
+}
+
+/* 인증방법 */
+.login-wrap .input-area li .button-wrap {
+	gap: 12px;
+	margin: 0;
+}
+.login-wrap .input-area li .button-wrap .btn {
+	height: 56px;
+	margin: 0;
+}
+
+.login-wrap .input-area + .section-header {
+	margin-top: 60px;
+}
+/* 단위(@) */
+.login-wrap .input-area li .unit {
+	min-width: 30px;
+	font-size: 16px;
+	text-align: center;
+}
+/* 체크박스 & 라디오 */
+.login-wrap input[type="checkbox"],
+.login-wrap input[type="radio"] {
+	display: inline-block;
+	width: 20px;
+	min-width: 20px;
+	height: 20px;
+	margin: 1px 0 0 0;
+	padding: 0;
+	vertical-align: middle;
+	appearance: none;
+	background-color: #fff;
+	border: 1px solid #999;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.login-wrap input[type="checkbox"] + label,
+.login-wrap input[type="radio"] + label {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-size: 15px;
+	line-height: 24px;
+	white-space: nowrap;
+}
+.login-wrap input[type="checkbox"] {
+	border-radius: 2px;
+}
+.login-wrap input[type="checkbox"]:checked {
+	background: url('../images/icon/ic_check.svg') no-repeat center center;
+	border: 0;
+}
+.login-wrap input[type="radio"] {
+	border-radius: 50%;
+}
+.login-wrap input[type="radio"]:checked {
+	background: url('../images/icon/ic_radio.svg') no-repeat center center;
+	border: 0;
+}
+
+/* 카드 수령방법 & 로그인 선택방법 */
+.login-wrap .check-wrap li {
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+	padding: 8px 0;
+	margin: 0;
+	line-height: 24px;
+}
+.login-wrap .input-area.rCard {
+	height: 0;
+	margin-top: 20px;
+	padding: 0 20px 20px 20px;
+	border: 1px solid var(--sub);
+	overflow: hidden;
+	opacity: 0;
+}
+.login-wrap .check-wrap.horizontal {
+	display: flex;
+	gap: 0 32px;
+	padding-bottom: 8px;
+}
+.login-wrap .check-wrap.horizontal li {
+	padding: 0;
+}
+
+.login-wrap .input-area + .page-notice {
+	margin-top: 40px;
+}
+
+
+/************************************************
+	6. 회원가입 - 약관동의
+************************************************/
+/* 회원가입 절차 */
+.login-wrap .join-process {
+	display: flex;
+	justify-content: center;
+	gap: 0 96px;
+	margin-bottom: 60px;
+}
+.login-wrap .join-process li {
+	position: relative;
+	counter-increment: joinProcess;
+	text-align: center;
+	color: #bbb;
+	font-size: 14px;
+	line-height: 24px;
+}
+.login-wrap .join-process li::before {
+	content: counter(joinProcess);
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto 4px;
+	color: #bbb;
+	font-size: 16px;
+	line-height: 30px;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.login-wrap .join-process li::after {
+	content: '\e901';
+	font-family: "icomoon";
+	display: block;
+	position: absolute;
+	right: -60px;
+	top: 18px;
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	font-weight: 500;
+}
+.login-wrap .join-process li:last-child::after {
+	display: none;
+}
+.login-wrap .join-process li.on {
+	color: var(--primary);
+	font-weight: 700;
+}
+.login-wrap .join-process li.on::before {
+	color: #fff;
+	background-color: var(--primary);
+	border: 0;
+}
+.login-wrap .join-process li.pass::before {
+	content: '';
+	background: var(--primary) url('../images/icon/ic_check.svg') no-repeat center center;
+	border: 0;
+}
+
+/* 약관동의 */
+.login-wrap .agree-area {
+	margin-top: 20px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.login-wrap .agree-area .select-all {
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+	padding: 20px 20px 12px;
+	font-size: 16px;
+	line-height: 24px;
+	background-color: #F4F4F4;
+	border-bottom: 1px solid #ddd;
+}
+.login-wrap .agree-area .select-all label {
+	font-size: 16px;
+}
+.login-wrap .agree-area .list {
+	padding: 12px 20px;
+}
+.login-wrap .agree-area .list li {
+	display: flex;
+	gap: 0 8px;
+	padding: 6px 0;
+}
+.login-wrap .agree-area .list li label {
+	flex: 1;
+	margin-top: -2px;
+	white-space: inherit;
+}
+.login-wrap .agree-area .list li .btn-txt {
+	height: 22px;
+	padding: 0;
+	font-size: 12px;
+	line-height: 16px;
+	text-decoration: underline;
+}
+
+/*** 가입유형 ***/
+.login-wrap .btn-big {
+	gap: 0 16px;
+	width: 100%;
+	height: 56px;
+	margin-bottom: 12px;
+	font-size: 16px;
+	line-height: 28px;
+}
+.login-wrap .btn-big .ic-naver {
+	width: 36px;
+	height: 36px;
+	background: url('../images/icon/ic_naver.svg') no-repeat center center;
+}
+.login-wrap .btn-big .ic-kakao {
+	width: 36px;
+	height: 36px;
+	background: url('../images/icon/ic_kakao.svg') no-repeat center center;
+}
+.login-wrap .btn-big .ic-google {
+	width: 36px;
+	height: 36px;
+	background: url('../images/icon/ic_google.svg') no-repeat center center;
+}
+
+/*** 가입완료 ***/
+.login-wrap .join-done {
+	text-align: center;
+}
+.login-wrap .join-done .txt {
+	padding-top: 88px;
+	margin: 40px 0 8px 0;
+	color: var(--primary);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	background: url('../images/icon/ic_done.svg') no-repeat center top;
+}
+.login-wrap .join-done .txt2 {
+	padding-top: 88px;
+	margin: 40px 0 8px 0;
+	color: var(--primary);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	background: url('../images/icon/ic_done2.svg') no-repeat center top;
+}
+.login-wrap .join-done .guide-txt {
+	color: #666;
+	font-size: 15px;
+	line-height: 24px;
+}
+.login-wrap .button-wrap {
+	justify-content: center;
+	margin-top: 40px;
+}
+.login-wrap .button-wrap .btn {
+	height: 40px;
+	font-size: 16px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+/************************************************
+	6. 회원가입 & 7. 로그인
+************************************************/
+.login-wrap {
+	margin: 0 auto 20px;
+}
+.login-wrap .input-area li .input-wrap input {
+	max-width: none;
+}
+.login-wrap .input-area li .input-wrap.flex {
+	flex-wrap: wrap;
+	gap: 12px 6px;
+}
+.login-wrap .input-area li .input-wrap.flex input {
+	/* max-width: calc(100% - 120px); */
+	max-width: calc(100% - 110px);
+}
+.login-wrap .input-area li .input-wrap.email {
+}
+
+
+/************************************************
+	6. 회원가입 - 약관동의
+************************************************/
+/* 회원가입 절차 */
+.login-wrap .join-process {
+	gap: 0 24px;
+	margin-bottom: 40px;
+}
+.login-wrap .join-process li::after {
+	display: none;
+}
+
+/* 인증방법 */
+.login-wrap .input-area li .button-wrap {
+	flex-wrap: wrap;
+}
+	
+}
+
+
+/************************************************
+	8. 로그인
+************************************************/
+.login-wrap .member-link {
+	margin: 8px 0 40px;
+	overflow: hidden;
+}
+.login-wrap .member-link li {
+	display: inline-block;
+	color: #666;
+	font-size: 13px;
+	line-height: 20px;
+}
+.login-wrap .member-link li a {
+	color: #666;
+}
+.login-wrap .member-link li:first-child::after {
+	content: '';
+	display: inline-block;
+	height: 10px;
+	margin: 0 10px 0 12px;
+	border-left: 1px solid #ccc;
+}
+.login-wrap .member-link li:last-child {
+	float: right;
+}
+
+/* 인증성공(팝업) */
+.layer-wrap .certified {
+	padding-top: 80px;
+	background: url('../images/icon/ic_certified.svg') no-repeat center top;
+}

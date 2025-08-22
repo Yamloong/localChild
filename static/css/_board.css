@@ -1,0 +1,744 @@
+@charset "UTF-8";
+/**
+ * "소통참여" 화면 스타일을 여기에 정의합니다.
+ * "소통참여" 화면과 "고객지원" 페이지에 있는 게시판 css는 동일합니다.
+ * 이 파일은 all.css에서 import되어 사용됩니다.
+**/
+
+/************************************************
+	4. 소통참여 & 5. 고객지원 - 공통(공지사항, 자유게시판, 홍보자료실, 1:1문의)
+************************************************/
+/* 검색영역 */
+.board-wrap .search-area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0 16px;
+	margin-bottom: 40px;
+	padding: 20px 32px;
+	background-color: #EAEFE7;
+}
+
+/* 2025-07-16 추가 start */
+.board-wrap .search-area > .select-wrap {
+	min-width: 150px;
+}
+/* 2025-07-16 추가 end */
+
+.board-wrap .search-area > .input-wrap {
+	position: relative;
+	width: 470px;
+}
+.board-wrap .search-area > .input-wrap:only-child {
+	width: 512px;
+}
+.board-wrap .search-area > .input-wrap input {
+	padding-right: 50px;
+}
+.board-wrap .search-area .btn-icon {
+	position: absolute;
+	right: 16px;
+	top: 9px;
+	z-index: 10;
+}
+.board-wrap .search-area .condition {
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+}
+.board-wrap .search-area .condition .input-wrap {
+	max-width: 160px;
+}
+.board-wrap .search-area .condition .input-wrap input {
+	padding-right: 40px;
+}
+.board-wrap .search-area .condition .unit {
+	font-size: 16px;
+}
+.board-wrap .search-area .condition .btn {
+	height: 32px;
+}
+.board-wrap .search-area .condition .btn-primary {
+	min-width: 80px;
+}
+
+/************************************************
+	1. 영양소분석 - 영양소분석 리포트
+************************************************/
+.board-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+.meal-list {
+	border-top: 1px solid #000;
+}
+.meal-list > li {
+	display: flex;
+	justify-content: space-between;
+	padding: 46px 0;
+	color: #6B7785;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
+}
+.meal-list > li + li {
+	border-top: 1px solid #E5E6EC;
+}
+.meal-list > li:last-child {
+	border-bottom: 0;
+}
+.meal-list > li .date {
+	margin-top: 6px;
+	color: #6B7785;
+	font-weight: 400;
+}
+
+.meal-list > li .photo {
+	width: 400px;
+	background: url('../../static/images/icon/ic_photo.svg') no-repeat center center;
+}
+.meal-list > li .photo img {
+	max-width: 100%;
+}
+.meal-list > li .graph {
+	flex: 1;
+	max-width: 736px;
+}
+.meal-list > li .graph li:first-child {
+	margin-bottom: 8px;
+	color: #1D2129;
+	font-size: 16px;
+}
+.meal-list > li .graph li .info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.meal-list > li .graph li .info .percent {
+	color: #1D2129;
+}
+.meal-list > li .graph li .info .unit {
+	color: #6B7785;
+}
+.meal-list > li .graph li .bar-wrap {
+	position: relative;
+	height: 12px;
+	margin: 4px 0;
+	background-color: #F2F3F5;
+	border-radius: 12px;
+}
+.meal-list > li .graph li .bar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: #5BADFB;
+	border-radius: 12px;
+}
+.meal-list > li .graph li:first-child .bar-wrap .bar,
+.meal-list > li .graph li:last-child .bar-wrap .bar {
+	background-color: #FF0F13;
+}
+
+/************************************************
+	1. 영양소분석 - 식단표관리
+************************************************/
+.meal-photo img {
+	max-width: 100%;
+}
+
+
+/* 게시판 목록 header */
+.board-wrap .tbl-wrap .tbl-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+.board-wrap .tbl-wrap .tbl-header .count {
+	font-size: 16px;
+	line-height: 28px;
+}
+.board-wrap .tbl-wrap .tbl-header .button-wrap .btn {
+	min-width: auto;
+	height: 32px;
+	padding: 0 16px;
+	font-size: 13px;
+}
+.board-wrap .tbl-wrap .tbl-header .button-wrap .btn i {
+	font-size: 16px;
+}
+
+/* 게시판 목록 body */
+.board-wrap ul.table {
+	border-top: 2px solid #000;
+}
+.board-wrap ul.table li {
+	display: flex;
+	align-items: center;
+	gap: 0 16px;
+	color: #000;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+.board-wrap ul.table li:not(.thead):hover {
+	background-color: #f4f4f4;
+}
+/* 데이터 없을 때 */
+.board-wrap ul.table li.no-data {
+	justify-content: center;
+	gap: 0;
+	padding: 80px 0 !important;
+	color: #999;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center !important;
+	background: url('../images/icon/ic_notice.svg') no-repeat center 40px;
+}
+.board-wrap ul.table li > span {
+	padding: 15px 0;
+}
+.board-wrap ul.table li.thead .subject {
+	flex: 1;
+	text-align: center;
+}
+/* 번호 */
+.board-wrap ul.table li span.no {
+	min-width: 100px;
+}
+/* 제목 */
+.board-wrap ul.table li span.subject {
+	flex: 1;
+	min-width: 0;
+	text-align: left;
+}
+/* 작성자 */
+.board-wrap ul.table li span.writer {
+	min-width: 140px;
+}
+/* 등록일 */
+.board-wrap ul.table li span.date {
+	min-width: 160px;
+}
+/* 조회수 */
+.board-wrap ul.table li span.visit {
+	min-width: 120px;
+}
+/* 상태 */
+.board-wrap ul.table li span.state {
+	min-width: 70px;
+}
+/* 게시글 상태 뱃지 */
+.board-wrap ul.table li span.state span[class^="badge"] {
+	padding: 0 8px;
+	height: 24px;
+	line-height: 22px;
+	border-radius: 24px;
+}
+
+/* 2025-07-16 추가 start */
+/* 지자체 */
+.board-wrap ul.table li span.local {
+	min-width: 160px;
+}
+/* 사용처 */
+.board-wrap ul.table li span.usage {
+	min-width: 260px;
+}
+/* 전화번호 */
+.board-wrap ul.table li span.number {
+	min-width: 160px;
+}
+
+/* 꾸러미상품 */
+.board-wrap ul.table li span.img {
+	min-width: 260px;
+}
+.board-wrap ul.table li span.img img {
+	width: 260px;
+	max-width: 100%;
+}
+/* 지원분류 */
+.board-wrap ul.table li span.cate {
+	min-width: 120px;
+}
+/* 설명 */
+.board-wrap ul.table li span.explain {
+	flex: 1;
+	min-width: 0;
+}
+/* 2025-07-16 추가 end */
+
+/* 게시글 N 아이콘 */
+.board-wrap ul.table li span.subject .new {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: -2px 2px 0 0;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 16px;
+	text-align: center;
+	background-color: #FF4B4B;
+	border-radius: 4px;
+	vertical-align: middle;
+}
+.board-wrap ul.table li span.subject a {
+	display: inline-block;
+	max-width: calc(95% - 50px);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	vertical-align: middle;
+}
+/* 게시글 file 유무 아이콘 */
+.board-wrap ul.table li .subject.has-file::after {
+	content: '\e91a';
+	font-family: "icomoon";
+	vertical-align: middle;
+}
+/* 게시판 상세페이지 */
+.board-wrap .view-area > *:last-child {
+	border-bottom: 1px solid #ccc;
+}
+.board-wrap .view-area > .info {
+	padding: 16px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #ccc;
+}
+.board-wrap .view-area > .info .title {
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+	margin-bottom: 4px;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 28px;
+}
+/* 게시글 상태 뱃지 */
+.board-wrap .view-area > .info .title span[class^="badge"] {
+	padding: 0 8px;
+	height: 24px;
+	line-height: 22px;
+	border-radius: 24px;
+}
+.board-wrap .view-area > .info .date {
+	color: #888;
+	font-size: 14px;
+	line-height: 20px;
+}
+.board-wrap .view-area > .info .date span:not(:last-child)::after {
+	content: '';
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin: -2px 6px 0 8px;
+	background-color: #ccc;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+/* 게시글 내용 */
+.board-wrap .view-area .content {
+	padding: 20px;
+	font-size: 15px;
+	line-height: 24px;
+}
+/* 파일 다운로드 */
+.board-wrap .view-area .file-area {
+	padding: 16px;
+}
+.board-wrap .view-area .file-area li {
+	margin-bottom: 8px;
+	font-size: 15px;
+	line-height: 24px;
+}
+.board-wrap .view-area .file-area li a {
+	text-decoration: underline;
+}
+/* 게시글 답변 */
+.board-wrap .view-area .answer {
+	min-height: 133px;
+	padding: 16px;
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #ccc;
+}
+.board-wrap .view-area .answer .info {
+	margin-bottom: 8px;
+	color: #888;
+	font-size: 14px;
+	line-height: 20px;
+}
+.board-wrap .view-area .answer .info span:not(:last-child)::after {
+	content: '';
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin: -2px 6px 0 8px;
+	background-color: #ccc;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.board-wrap .view-area .answer .txt {
+	padding-left: 24px;
+	font-size: 15px;
+	line-height: 24px;
+	background: url('../images/icon/ic_answer.svg') no-repeat 0 3px;
+}
+/* 이전글/다음글 */
+.board-wrap .view-area .preview li {
+	font-size: 14px;
+	line-height: 24px;
+	border-top: 1px solid #ccc;
+}
+.board-wrap .view-area .preview li span {
+	display: inline-block;
+	color: var(--primary);
+	padding: 12px 32px 12px 16px;
+}
+.board-wrap .view-area .preview li span i {
+	display: inline-block;
+	font-size: 16px;
+	margin: -3px 0 0 6px;
+	vertical-align: middle;
+}
+.board-wrap .view-area .preview li span.prev i {
+	display: inline-block;
+	margin: -3px 0 0 6px;
+	transform: rotate(-180deg);
+	vertical-align: middle;
+}
+.board-wrap .view-area .preview li.disabled * {
+	color: #999 !important;
+	pointer-events: none;
+}
+.board-wrap .view-area .controler {
+	justify-content: flex-end;
+	gap: 0 8px;
+	padding: 16px 0;
+}
+
+/* 게시판 쓰기페이지 */
+.board-wrap .write-area {
+	padding-bottom: 20px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #ccc;
+}
+.board-wrap .write-area > li {
+	margin-top: 20px;
+	padding: 0 20px;
+}
+.board-wrap .write-area > li.row {
+	display: flex;
+	gap: 0 16px;
+}
+.board-wrap .write-area > li.row .col {
+	flex: 1;
+}
+.board-wrap .write-area > li .form-container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0 20px;
+}
+.board-wrap .write-area > li .form-container * {
+	flex: 1;
+}
+.board-wrap .write-area > li .form-container .select-wrap {
+	width: calc(25% - 15px);
+}
+.board-wrap .write-area > li .form-container .select-wrap select {
+	font-size: 14px;
+}
+.board-wrap .write-area > li label {
+	display: inline-block;
+	margin-bottom: 4px;
+	color: var(--sub);
+	font-size: 15px;
+	line-height: 20px;
+}
+.board-wrap .write-area > li input,
+.board-wrap .write-area > li textarea {
+	height: 40px;
+	margin-top: 4px;
+	font-size: 14px;
+}
+.board-wrap .write-area > li textarea {
+	height: auto;
+}
+.board-wrap .write-area > li .input-wrap {
+	position: relative;
+}
+.board-wrap .write-area > li input.byte-limit {
+	padding-right: 95px;
+}
+.board-wrap .write-area > li .input-wrap textarea {
+	padding-bottom: 30px;
+	box-sizing: border-box;
+}
+.board-wrap .write-area > li .input-wrap .unit {
+	position: absolute;
+	right: 16px;
+	bottom: 14px;
+	color: #bbb;
+	font-size: 12px;
+}
+.board-wrap .write-area > li .input-wrap .unit .now {
+	color: #000;
+}
+.board-wrap .write-area > li input::placeholder,
+.board-wrap .write-area > li textarea::placeholder {
+	color: #999;
+	font-size: 14px;
+}
+.board-wrap .write-area > li .select-wrap select {
+	height: 40px;
+}
+.board-wrap .write-area > li .input-wrap.auto {
+	max-width: 255px;
+}
+
+/* 파일 업로드 */
+.board-wrap .write-area > li label.input-file {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0 5px;
+	min-height: 32px;
+	margin: 0;
+}
+.board-wrap .write-area > li label.input-file i.ic-file {
+	font-size: 18px;
+}
+.board-wrap .write-area > li label.input-file + .input-wrap input[type="file"] {
+	padding: 4px 0 4px 11px;
+}
+.board-wrap .write-area > li label.input-file + .input-wrap input[type="file"]::file-selector-button {
+	display: none; /* type=file일때 기본 '파일선택' 버튼 없애기 */
+}
+.board-wrap .write-area > li .guide-txt {
+	padding-left: 13px;
+	margin-left: -5px;
+	color: #888;
+	font-size: 14px;
+	line-height: 20px;
+	text-indent: -13px;
+}
+.board-wrap .write-area > li .guide-txt::before {
+	content: '·';
+	font-weight: 700;
+	margin: 0 3px;
+}
+
+.board-wrap .write-area .file-area {
+	margin-top: 16px;
+}
+.board-wrap .write-area .file-area li {
+	margin-bottom: 8px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.board-wrap .write-area .file-area li a {
+	text-decoration: underline;
+}
+.board-wrap .write-area .file-area li .btn-icon {
+	height: 20px;
+	margin-top: -1px;
+	vertical-align: middle;
+}
+.board-wrap .write-area .file-area li .btn-icon i {
+	font-size: 18px;
+}
+
+
+@media screen and (max-width: 767px) {
+	
+/************************************************
+	4. 소통참여 & 5. 고객지원 - 공통
+************************************************/
+/* 검색영역 */
+.board-wrap .search-area {
+	display: block;
+	margin: -20px -16px 20px;
+	padding: 24px 16px;
+	border-radius: 0;
+}
+.board-wrap .search-area > .input-wrap {
+	width: 100% !important;
+}
+.board-wrap .search-area .input-wrap input {
+	padding: 9px 12px;
+}
+.board-wrap .search-area .condition {
+	flex-wrap: wrap;
+	margin-top: 16px;
+}
+.board-wrap .search-area .condition .unit {
+	display: none;
+}
+.board-wrap .search-area .condition .input-wrap {
+	width: calc(50% - 4px);
+	margin-bottom: 8px;
+}
+.board-wrap .search-area .condition .input_datepicker_wrap input {
+	padding-right: 35px;
+}
+.board-wrap .search-area .condition .input_datepicker_wrap::after {
+	right: 10px;
+}
+
+/* 2025-07-16 추가 start */
+.tab-area + .board-wrap {
+	margin-top: 40px;
+}
+.board-wrap .search-area > .select-wrap {
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+}
+.board-wrap .tbl-wrap ul.table li .img,
+.board-wrap .tbl-wrap ul.table li .explain {
+	display: block;
+}
+.board-wrap ul.table li span.img img {
+	width: auto;
+}
+/* 2025-07-16 추가 end */
+
+/* 게시판 목록 */
+.board-wrap .tbl-wrap .tbl-header {
+	margin-bottom: 8px;
+}
+.board-wrap .tbl-wrap ul.table li.thead,
+.board-wrap .tbl-wrap ul.table li .no {
+	display: none;
+}
+.board-wrap .tbl-wrap ul.table li {
+	display: block;
+	padding: 12px 0;
+	text-align: left;
+}
+.board-wrap .tbl-wrap ul.table li span {
+	padding: 0;
+	color: #888;
+	font-size: 14px;
+}
+.board-wrap .tbl-wrap ul.table li .state {
+	display: inline-block;
+	margin-bottom: 4px;
+}
+.board-wrap .tbl-wrap ul.table li .subject {
+	display: block;
+}
+.board-wrap .tbl-wrap ul.table li .subject.has-file::after {
+	display: none;
+}
+.board-wrap .tbl-wrap ul.table li span.subject a {
+	max-width: 100%;
+	color: #000;
+	white-space: inherit;
+}
+.board-wrap .tbl-wrap ul.table li .subject.has-file a::after {
+	content: '\e91a';
+	display: inline-block;
+	font-family: "icomoon";
+	margin-top: -2px;
+	vertical-align: middle;
+}
+.board-wrap .tbl-wrap ul.table li .date::before {
+	content: '등록일 ';
+}
+.board-wrap .tbl-wrap ul.table.event li .date::before {
+	content: '이벤트 기간 ';
+}
+.board-wrap .tbl-wrap ul.table li .visit::before {
+	content: '조회수 ';
+}
+.board-wrap .tbl-wrap ul.table li span.writer::after,
+.board-wrap .tbl-wrap ul.table li span.date::after {
+	content: '';
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin: -3px 4px 0 6px;
+	background-color: #ccc;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+/* 게시글 상세 */
+.board-wrap .view-area > .info {
+	padding: 16px 0;
+}
+.board-wrap .view-area > .info .title {
+	flex-direction: column;
+	align-items: flex-start;
+}
+/* 게시글 내용 */
+.board-wrap .view-area .content {
+	padding: 16px 0;
+	font-size: 14px;
+}
+/* 파일 다운로드 */
+.board-wrap .view-area .file-area {
+	padding: 16px 0;
+}
+.board-wrap .view-area .file-area li {
+	font-size: 14px;
+}
+/* 이전글/다음글 */
+.board-wrap .view-area .preview li span {
+	padding: 12px 12px 12px 0;
+}
+.board-wrap .view-area .preview li a {
+	display: inline-block;
+	max-width: calc(100% - 77px);
+	padding: 12px 0;
+	margin-top: -4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+/* 게시글 답변 */
+.board-wrap .view-area .answer {
+	padding: 16px 8px;
+	background-color: #f4f4f4;
+}
+.board-wrap .view-area .answer .txt {
+	padding-left: 24px;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+/* 게시판 쓰기페이지 */
+.board-wrap .write-area li {
+	padding: 0;
+}
+/* 셀렉트 박스 */
+.board-wrap .write-area li .select-wrap {
+	flex-direction: column;
+	gap: 12px 0;
+}
+/* 파일 업로드 */
+.board-wrap .write-area > li .guide-txt {
+	display: block;
+	margin: 8px 0 0 0;
+}
+/* 지자체 선택 */
+.board-wrap .write-area > li .form-container {
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.board-wrap .write-area > li .form-container .select-wrap {
+	min-width: calc(50% - 6px);
+}
+.board-wrap .write-area > li .input-wrap.auto {
+	max-width: none;
+}
+
+}
